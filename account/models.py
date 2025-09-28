@@ -4,10 +4,7 @@ from django.contrib.auth.models import BaseUserManager,AbstractBaseUser
 
 class UserManager(BaseUserManager):
     def create_user(self, email, name,tc, password=None,password2=None):
-        """
-        Creates and saves a User with the given email, date of
-        birth and password.
-        """
+       
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -74,5 +71,3 @@ class User(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
-# admin@example.com
-# Admin
